@@ -33,3 +33,28 @@ Output: `0`
 
 
 ## Solution in JavaScript
+
+```
+var reverse = function(x) {
+    let z = ''
+    let isReady = true
+    let answer
+    if (x < 0) {
+        x = -x
+        isReady = false
+    }
+    x += ''
+    for (let i = x.length - 1; i >= 0; i--) {
+        z += x[i];
+    }
+    
+    if (isReady) {
+        answer = Number(z)
+    } else {
+        answer = -Number(z)
+    }
+    
+    
+    return answer >= -Math.pow(2, 31) && answer <= Math.pow(2, 31) - 1 ? answer : 0
+};
+```
